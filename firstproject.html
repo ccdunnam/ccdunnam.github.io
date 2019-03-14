@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>My First Web Page</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
+    <script src="https://js.arcgis.com/4.10/"></script>
+    <script>
+      require([
+        "esri/Map",
+        "esri/views/MapView"
+      ], function(Map, MapView) {
+        var map = new Map({
+          basemap: "streets"
+        });// Code to create the map and view will go here
+
+        var view = new MapView({
+            container: "myMapDiv",  // Reference to the DOM node that will contain the view
+            map: map               // References the map object created in step 3
+        });
+      });
+    </script>
+    <style>
+      #myMapDiv {
+        height: 500px;
+        width: 800px;
+      }
+</style>
+  </head>
+  <body>
+    <h1>My Map</h1>
+    <div id="myMapDiv"></div>
+  </body>
+</html>
