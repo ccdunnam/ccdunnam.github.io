@@ -4,7 +4,8 @@ Web GIS 4046
 
 ### Published Sites
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+ccdunnam.github.io/myfirstprojectten.html
+      
 
 
 
