@@ -7,14 +7,9 @@ var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/w
 	maxZoom: 16,
 	ext: 'jpg'
 }).addTo(MyMap);
-let NOLApoint = L.marker([30, -90]).addTo(MyMap)
-let MyShape = L.polygon([
-  [51.509, -0.08],
-  [51.503, -0.06],
-  [51.51, -0.047],
-  [40.503, -1.06],
-  [50.503, -5.06]
-]).addTo(MyMap);
-
-NOLApoint.bindPopup('A <em>marker</em>')
-MyShape.bindPopup('A polygon')
+let NOLApoint = L.marker([21, -87]).addTo(MyMap)
+let MyShape = L.polygon([[21,-87],[20,-81],[18,-84]]).addTo(MyMap);
+let MyLine = L.polygon([[30,-90],[21,-87]]).addTo(MyMap);
+NOLApoint.bindPopup('<em>Cancun</em>,Mexico')
+MyShape.bindPopup('Clear Water <em>Polygon</em>')
+MyLine.bindPopup('<em>Line</em> from NOLA to Cancun')
