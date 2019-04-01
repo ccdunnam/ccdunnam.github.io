@@ -21,3 +21,6 @@ var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest
 L.esri.featureLayer({
 	url: 'https://services9.arcgis.com/SDQDNhpG8jikA0D1/arcgis/rest/services/Top_50_US_Cities_List/FeatureServer/0'
 }).addTo(WorldImageMap)
+L.esri.featureLayer({
+	url: 'https://services.arcgis.com/jIL9msH9OI208GCb/arcgis/rest/services/Deep_Poverty/FeatureServer/0'
+}).addTo(WorldImageMap)
