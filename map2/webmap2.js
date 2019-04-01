@@ -22,5 +22,5 @@ L.esri.featureLayer({
 	url: 'https://services9.arcgis.com/SDQDNhpG8jikA0D1/arcgis/rest/services/Top_50_US_Cities_List/FeatureServer/0'
 }).addTo(WorldImageMap)
 L.esri.featureLayer({
-	url: 'https://services.arcgis.com/jIL9msH9OI208GCb/arcgis/rest/services/Deep_Poverty/FeatureServer/0'
+	url: 'https://services9.arcgis.com/SDQDNhpG8jikA0D1/arcgis/rest/services/Higher_Education_US_2010_2014/FeatureServer/0'
 }).addTo(WorldImageMap)
