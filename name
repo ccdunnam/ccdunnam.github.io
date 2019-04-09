@@ -1,0 +1,3 @@
+git config --global --list
+use.email=ccdunnam@gmail.com
+user.name=ccdunnam 
