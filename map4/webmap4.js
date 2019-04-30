@@ -1,15 +1,28 @@
-let MyMap = L.map('map4').setView([32.18, -99.14], 4)
-//L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}.png').addTo(MyMap)
-var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
-	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-	subdomains: 'abcd',
-	minZoom: 1,
-	maxZoom: 16,
-	ext: 'jpg'
-}).addTo(MyMap);
-let NOLApoint = L.marker([21, -87]).addTo(MyMap)
-let MyShape = L.polygon([[21,-87],[20,-81],[18,-84]]).addTo(MyMap);
-let MyLine = L.polygon([[30,-90],[21,-87]]).addTo(MyMap);
-NOLApoint.bindPopup('<em>Cancun</em>,Mexico')
-MyShape.bindPopup('Clear Water <em>Polygon</em>')
-MyLine.bindPopup('<em>Line</em> from NOLA to Cancun')
+let CrimeMap = L.map('map4').setView([30.5, -91], 11)
+let basemapUrl = 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png'
+L.tileLayer(basemapUrl).addTo(CrimeMap)
+let StateCrimeUrl = 'https://ccdunnam.github.io/map4/baton_rouge_crime_incidents_2018.geojson'
+// jQuery.getJSON(StateCrimeUrl, function (data) {
+// 	let CrimeStyle = function (feature) {
+// 	  let crime = feature.properties.CRIME // get the current state's Median Age attribute
+// 	  let color = '#ff0000' // let the initial color be a darker green
+// 		let fillOpacity = .4;
+// 	  if ( crime == 'HOMICIDE' ) {
+// 				color = '#15560d' ,
+// 			 	fillOpacity = .8
+// 				} // if the state's median age is less than the average, color it a lighter green
+// 	  return {
+// 	    stroke: false, //use the color variable above for the value
+// 	    radius: 10,
+// 			fillColor: color,
+// 			fillOpacity: 0.5
+// 	  }
+// 	}
+// 	let StateCrimegeojsonOptions = {
+// 		style: centerStyle,
+// 		onEachFeature: createPopup,
+// 		pointToLayer: createMarker
+//  }
+//  let createMarker = function (feature, latlng) {
+// 		return L.circleMarker(latlng)
+// 	}
