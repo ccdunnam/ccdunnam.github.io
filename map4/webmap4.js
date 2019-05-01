@@ -1,5 +1,5 @@
 let crimeMap = L.map('map4').setView([30.45, -91.1], 12)
-let basemapUrl = 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png'
+let basemapUrl = 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voyager_labels_under/{z}/{x}/{y}.png'
 L.tileLayer(basemapUrl).addTo(crimeMap)
 let stateCrimeUrl = 'https://ccdunnam.github.io/map4/baton_rouge_crime_incidents_2018.geojson'
 jQuery.getJSON(stateCrimeUrl, function (data) {
@@ -7,13 +7,13 @@ jQuery.getJSON(stateCrimeUrl, function (data) {
 		console.log(feature)
 			let crime = feature.properties.CRIME // get the current state's Median Age attribute
 			console.log(crime)
-			let color = '#ff0000' // let the initial color be a darker green
+			let color = '#6CB6FF' // let the initial color be a darker green
 			let fillOpacity = .4;
 			if ( crime == 'HOMICIDE' ) {
-				color = '#15560d',
+				color = '#ff0000',
 				fillOpacity = .8
 			} // if the state's median age is less than the average, color it a lighter green
-			if ( crime == 'THEFT' || crime == 'RESIDENTIAL BURGLARY' ) {
+			if ( crime == 'THEFT' || crime == 'RESIDENTIAL BURGLARY' || crime == 'NON-RESIDENTIAL BURGLARY' || crime == 'VEHICLE BURGLARY' || crime == 'INDIVIDUAL ROBBERY' || crime == 'BUSINESS ROBBERY' ) {
 				color = 'ORANGE',
 				fillOpacity = .8
 			} // if the state's median age is less than the average, color it a lighter green
@@ -27,7 +27,7 @@ jQuery.getJSON(stateCrimeUrl, function (data) {
 	}
 	let onEachFeature = function (feature, layer) {
      let name = feature.properties.CRIME
-     layer.bindPopup(name)
+     layer.bindPopup('Crime Committed : ' + name)
    }
 	let myLayerOptions = {
   	pointToLayer: createCircles,
